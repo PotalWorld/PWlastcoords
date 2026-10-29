@@ -168,7 +168,8 @@ public abstract class DeathScreenMixin extends Screen {
             && mouseX <= coordinatesX + coordinatesWidth
             && mouseY >= coordinatesY
             && mouseY <= coordinatesY + font.lineHeight
-            && event.button() == 0) {
+            // Minecraft 26.3 uses SDL button numbering, where the left button is 1.
+            && event.button() == 1) {
 
             Minecraft.getInstance().keyboardHandler.setClipboard(
                 pwlastcoords$coordinates
